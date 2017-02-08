@@ -53,6 +53,7 @@ void loop() {
 
    if (!client.loop()) {
       mqttConnect();
+      initManagedDevice();
    }
 }
 
@@ -78,7 +79,7 @@ void mqttConnect() {
 }
 
 void initManagedDevice() {
-   if (client.subscribe("iotdm-1/response")) {
+   if (client.subscribe(responseTopic)) {
       Serial.println("subscribe to responses OK");
    } else {
       Serial.println("subscribe to responses FAILED");
@@ -90,7 +91,7 @@ void initManagedDevice() {
       Serial.println("subscribe to reboot FAILED");
    }
 
-   if (client.subscribe("iotdm-1/device/update")) {
+   if (client.subscribe(updateTopic)) {
       Serial.println("subscribe to update OK");
    } else {
       Serial.println("subscribe to update FAILED");
