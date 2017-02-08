@@ -12,10 +12,10 @@
 const char* ssid = "***YOUR WI-FI ID ****";
 const char* password = "**** YOUR WI-FI PASSWORD";
 
-#define ORG "tjt7z1"
-#define DEVICE_TYPE "NodeMCU"
-#define DEVICE_ID "andrewsNodeMCU"
-#define TOKEN "?1XXZTXxf(A-w981TJ"
+#define ORG "***YOUR ORG***"
+#define DEVICE_TYPE "***YOUR DEVICE_TYPE***"
+#define DEVICE_ID "***YOUR DEVICE_ID***"
+#define TOKEN "***YOUR TOKEN***"
 //-------- Customise the above values --------
 
 char server[] = ORG ".messaging.internetofthings.ibmcloud.com";
