@@ -1,5 +1,12 @@
 /*
  ESP8266 Analog Input
+
+ This file demonstrates analog input through pin A0.
+ As demonstrated in my videos, I use a light sensor.
+ 
+ An LED is connected to D1 and flashes on and off every second
+ to demonstrate that the code is working.
+
 */
 
 int valOI = 0;

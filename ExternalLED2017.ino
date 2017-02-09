@@ -1,4 +1,8 @@
 /*
+	Original code was modified to use an external LED connected to D1.
+	Same functionality otherwise.
+
+
  ESP8266 Blink by Simon Peter
  Blink the blue LED on the ESP-01 module
  This example code is in the public domain
@@ -7,6 +11,7 @@
  (which is also the TXD pin; so we cannot use Serial.print() at the same time)
  
  Note that this sketch uses LED_BUILTIN to find the pin with the internal LED
+
 */
 
 void setup() {

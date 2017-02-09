@@ -1,7 +1,8 @@
 /**
  * BasicHTTPClient.ino
  *
- *  Created on: 24.05.2015
+ *  This code connects to google.com to demonstrate a basic HTTP
+ *  request.
  *
  */
 
