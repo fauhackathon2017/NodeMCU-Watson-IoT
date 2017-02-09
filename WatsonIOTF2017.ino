@@ -28,6 +28,7 @@ const char responseTopic[] = "iotdm-1/response";
 const char manageTopic[] = "iotdevice-1/mgmt/manage";
 const char updateTopic[] = "iotdm-1/device/update";
 const char rebootTopic[] = "iotdm-1/mgmt/initiate/device/reboot";
+const char fauCommandTopic[] = "iot-2/cmd/status/fmt/json";
 
 void callback(char*, byte*, unsigned int);
 WiFiClient wifiClient;
@@ -97,6 +98,12 @@ void initManagedDevice() {
       Serial.println("subscribe to update FAILED");
    }
 
+   if (client.subscribe(fauCommandTopic)) {
+      Serial.println("subscribe to update OK");
+   } else {
+      Serial.println("subscribe to update FAILED");
+   }
+
    StaticJsonBuffer<300> jsonBuffer;
    JsonObject& root = jsonBuffer.createObject();
    JsonObject& d = root.createNestedObject("d");
@@ -145,6 +152,11 @@ void callback(char* topic, byte* payload, unsigned int payloadLength) {
 
    if (strcmp (updateTopic, topic) == 0) {
       handleUpdate(payload); 
+   } 
+
+   if (strcmp (fauCommandTopic, topic) == 0) {
+      Serial.print("FAU command received: ");
+      Serial.println((char*)payload);
    } 
 }
 
