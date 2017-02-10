@@ -28,7 +28,7 @@ const char responseTopic[] = "iotdm-1/response";
 const char manageTopic[] = "iotdevice-1/mgmt/manage";
 const char updateTopic[] = "iotdm-1/device/update";
 const char rebootTopic[] = "iotdm-1/mgmt/initiate/device/reboot";
-const char fauCommandTopic[] = "iot-2/cmd/status/fmt/json";
+const char fauCommandTopic[] = "iot-2/cmd/faucommand/fmt/json";
 
 void callback(char*, byte*, unsigned int);
 WiFiClient wifiClient;
